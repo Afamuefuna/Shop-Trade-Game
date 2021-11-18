@@ -17,7 +17,6 @@ public class Trading : MonoBehaviour
         if(itemID.price > characterStats.money)
         {
             Debug.Log("You do not have enough money kid");
-
         }
         else
         {
@@ -25,11 +24,13 @@ public class Trading : MonoBehaviour
             shopItemDatabase = GameObject.Find("shopItemDatabase").GetComponent<shopItemDatabase>();
             foreach (var item in shopItemDatabase.shopItems.ToList())
             {
-                if(shopItemDatabase.shopItems.IndexOf(item) == itemID.ID)
+                if(item.ID == itemID.ID)
                 {
                     shopItemDatabase.shopItems.Remove(item);
                 }
             }
+            itemID.mItemState= itemID.state.inWardRobe;
+            itemID.initializeForWardrobe();
             Debug.Log("ITEM added to wardrobe");
         }
     }

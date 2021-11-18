@@ -11,6 +11,23 @@ public class itemID : MonoBehaviour
     public GameObject Icon;
     public float price;
     public Color32 color;
+    public enum state
+    {
+        inStore,
+        inWardRobe,
+        inEquip
+    }
+
+    public enum itemType
+    {
+        pants,
+        shirt,
+        shoe
+    }
+
+    public itemType mItemType;
+
+    public state mItemState;
 
     public TMP_Text nameText;
     public TMP_Text priceText;
@@ -18,6 +35,8 @@ public class itemID : MonoBehaviour
 
     private void Start()
     {
+        mItemState = state.inStore;
+
         nameText = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
         nameText.text = name.ToString();
 
@@ -35,5 +54,13 @@ public class itemID : MonoBehaviour
         {
             image.color = new Color32(color.r, color.g, color.b, color.a);
         }
+    }
+
+    public void initializeForWardrobe()
+    {
+        if (mItemState != state.inWardRobe)
+            return;
+        Instantiate(Resources.Load("Buttons") as GameObject, gameObject.transform);
+        Destroy(gameObject.transform.Find("Button").transform.gameObject);
     }
 }

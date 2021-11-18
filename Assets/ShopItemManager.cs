@@ -17,6 +17,19 @@ public class ShopItemManager : MonoBehaviour
             item.GetComponent<itemID>().color = itemDatabase.shopItems[i].color;
             item.GetComponent<itemID>().price = itemDatabase.shopItems[i].price;
             item.GetComponent<itemID>().Icon = itemDatabase.shopItems[i].Icon;
+            if(itemDatabase.shopItems[i].mItemType == ShopItem.itemType.pants)
+            {
+                item.GetComponent<itemID>().mItemType = itemID.itemType.pants;
+            }
+            if (itemDatabase.shopItems[i].mItemType == ShopItem.itemType.shirt)
+            {
+                item.GetComponent<itemID>().mItemType = itemID.itemType.shirt;
+            }
+            if (itemDatabase.shopItems[i].mItemType == ShopItem.itemType.shoe)
+            {
+                item.GetComponent<itemID>().mItemType = itemID.itemType.shoe;
+            }
+
         }
     }
 }

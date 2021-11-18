@@ -10,4 +10,13 @@ public class ShopItem
     public GameObject Icon;
     public float price;
     public Color32 color;
+    public int ID;
+    public enum itemType
+    {
+        pants,
+        shirt,
+        shoe
+    }
+
+    public itemType mItemType;
 }
