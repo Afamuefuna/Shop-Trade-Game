@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - characterParts
+  - Icon
+  - Shop
+  - Wardrobe
   layers:
   - Default
   - TransparentFX

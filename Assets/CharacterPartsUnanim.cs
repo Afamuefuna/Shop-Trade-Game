@@ -8,13 +8,18 @@ public class CharacterPartsUnanim : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] Sprite[] eyes_img_X, eyes_img_Y, hair_img_X, hair_img_Y;
 
-    void Update()
+    void LateUpdate()
     {
-        customizeChar(playerMovement.movementDirection.x, eyes, eyes_img_X);
-        customizeChar(playerMovement.movementDirection.y, eyes, eyes_img_Y);
-        customizeChar(playerMovement.movementDirection.x, hair, hair_img_X);
-        customizeChar(playerMovement.movementDirection.y, hair, hair_img_Y);
-
+        if (playerMovement.movementDirection.x >= 0 || playerMovement.movementDirection.x <= 0)
+        {
+            customizeChar(playerMovement.movementDirection.x, eyes, eyes_img_X);
+            customizeChar(playerMovement.movementDirection.x, hair, hair_img_X);
+        }
+        if(playerMovement.movementDirection.y >= 0 || playerMovement.movementDirection.y <= 0)
+        {
+            customizeChar(playerMovement.movementDirection.y, eyes, eyes_img_Y);
+            customizeChar(playerMovement.movementDirection.y, hair, hair_img_Y);
+        }
     }
 
     void customizeChar(float direction, SpriteRenderer spriteRenderer, Sprite[] sprite)
