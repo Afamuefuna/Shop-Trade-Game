@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GrandMaChatOrder.isChatOn)
+        {
+            return;
+        }
         movementDirection.x = Input.GetAxisRaw("Horizontal");
         movementDirection.y = Input.GetAxisRaw("Vertical");
 
@@ -26,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GrandMaChatOrder.isChatOn)
+        {
+            return;
+        }
         mRigidbody.MovePosition(mRigidbody.position + movementDirection * moveSpeed * Time.fixedDeltaTime);
     }
 
