@@ -5,13 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class collisionManager : MonoBehaviour
 {
-    GameObject ExitSign;
+    GameObject ExitSign, InspectSign, itemFound, EmptySign;
     string sceneToTransitTo;
+    bool containsCollectible;
+    bool collectibleCollected = false;
+
+    collections collections;
 
     private void Start()
     {
-        ExitSign = GameObject.Find("Leave").gameObject;
+        EmptySign = GameObject.Find("Empty").gameObject;
+        itemFound = GameObject.Find("item found").gameObject;
+        collections = gameObject.GetComponent<collections>();
+        ExitSign = GameObject.Find("Enter").gameObject;
+        InspectSign = GameObject.Find("Inspect");
         ExitSign.SetActive(false);
+        InspectSign.SetActive(false);
+        itemFound.SetActive(false);
+        EmptySign.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,6 +41,11 @@ public class collisionManager : MonoBehaviour
             ExitSign.SetActive(true);
             sceneToTransitTo = "Street";
         }
+        if(collision.gameObject.name == "Desk")
+        {
+            InspectSign.SetActive(true);
+            containsCollectible = true;
+        }
     }
 
     private void Update()
@@ -39,6 +55,28 @@ public class collisionManager : MonoBehaviour
             if (ExitSign.activeInHierarchy)
             {
                 loadScene(sceneToTransitTo);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (InspectSign.activeInHierarchy)
+            {
+                if (containsCollectible)
+                {
+                    if (collectibleCollected)
+                    {
+                        EmptySign.SetActive(true);
+                        InspectSign.SetActive(false);
+                        return;
+                    }
+                    
+                    collections.collectedItems.Add(collections.rareImage);
+                    itemFound.SetActive(true);
+                    InspectSign.SetActive(false);
+                    containsCollectible = false;
+                    collectibleCollected = true;
+                }
             }
         }
     }
@@ -56,6 +94,12 @@ public class collisionManager : MonoBehaviour
         if (collision.gameObject.name == "Street exit")
         {
             ExitSign.SetActive(false);
+        }
+        if (collision.gameObject.name == "Desk")
+        {
+            InspectSign.SetActive(false);
+            EmptySign.SetActive(false);
+            itemFound.SetActive(false);
         }
     }
 

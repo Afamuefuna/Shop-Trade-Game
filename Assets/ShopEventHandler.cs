@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ShopEventHandler : MonoBehaviour
 {
-    [SerializeField] GameObject ShopPanel, WardrobePanel, closeShopPanelButton;
+    [SerializeField] GameObject ShopPanel, WardrobePanel, closeShopPanelButton, sellPanel;
 
     private void Start()
     {
+        sellPanel.SetActive(false);
         ShopPanel.SetActive(false);
         WardrobePanel.SetActive(false);
         closeShopPanelButton.SetActive(false);
@@ -21,7 +22,10 @@ public class ShopEventHandler : MonoBehaviour
 
     public void sell()
     {
-
+        sellPanel.SetActive(true);
+        ShopPanel.SetActive(false);
+        WardrobePanel.SetActive(false);
+        closeShopPanelButton.SetActive(true);
     }
 
     public void wardRobe()
@@ -40,5 +44,6 @@ public class ShopEventHandler : MonoBehaviour
         WardrobePanel.SetActive(false);
         ShopPanel.SetActive(false);
         closeShopPanelButton.SetActive(false);
+        sellPanel.SetActive(false);
     }
 }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class keepObjectAcrossScenes : MonoBehaviour
+public class DatabaseSaver : MonoBehaviour
 {
-    private static keepObjectAcrossScenes _instance;
-    public static keepObjectAcrossScenes Instance
+    private static DatabaseSaver _instance;
+    public static DatabaseSaver Instance
     {
         get;
         set;

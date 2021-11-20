@@ -58,6 +58,7 @@ public class GrandMaChatOrder : MonoBehaviour
                 break;
             case 7:
                 GrandMaChat = GrandMaChatSystem.chats[0].Discussion[5];
+                characterStats.money = characterStats.money + 100;
                 break;
             case 8:
                 TerryChat = TerryChatSystem.chats[0].Discussion[2];

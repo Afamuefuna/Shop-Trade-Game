@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.53042215, b: 0.4470588, a: 1}
+  m_Color: {r: 0.73672277, g: 1, b: 0.4481132, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 504588006710902454}
         m_TargetAssemblyTypeName: Trading, Assembly-CSharp
-        m_MethodName: sell
+        m_MethodName: buy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sell
+  m_text: Price
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c671636954648ff4dbe0abcb91bc604f, type: 2}
   m_sharedMaterial: {fileID: 5973416088292170348, guid: c671636954648ff4dbe0abcb91bc604f, type: 2}

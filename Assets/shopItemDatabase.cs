@@ -7,4 +7,5 @@ using UnityEngine;
 public class shopItemDatabase : MonoBehaviour
 {
     public List<ShopItem> shopItems = new List<ShopItem>();
+    public List<ShopItem> soldItems = new List<ShopItem>();
 }

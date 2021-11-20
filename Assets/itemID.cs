@@ -22,7 +22,8 @@ public class itemID : MonoBehaviour
     {
         pants,
         shirt,
-        shoe
+        shoe,
+        collectible
     }
 
     public itemType mItemType;
@@ -35,16 +36,11 @@ public class itemID : MonoBehaviour
 
     private void Start()
     {
-        mItemState = state.inStore;
-
         nameText = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
         nameText.text = name.ToString();
 
-        priceText = gameObject.transform.Find("Button").gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
-        priceText.text = price.ToString();
-
         GameObject newIcon =
-        Instantiate(Icon, gameObject.transform);
+            Instantiate(Icon, gameObject.transform);
 
         newIcon.name = "Icon";
         newIcon.transform.SetSiblingIndex(1);
@@ -54,6 +50,18 @@ public class itemID : MonoBehaviour
         {
             image.color = new Color32(color.r, color.g, color.b, color.a);
         }
+
+        if (mItemState == state.inStore)
+        {
+            nameText = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
+            nameText.text = name.ToString();
+
+            priceText = gameObject.transform.Find("Button").gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
+            if (priceText != null)
+            {
+                priceText.text = price.ToString();
+            }
+        }
     }
 
     public void initializeForWardrobe()
@@ -61,6 +69,9 @@ public class itemID : MonoBehaviour
         if (mItemState != state.inWardRobe)
             return;
         Instantiate(Resources.Load("Buttons") as GameObject, gameObject.transform);
-        Destroy(gameObject.transform.Find("Button").transform.gameObject);
+        if(gameObject.transform.Find("Button").transform.gameObject != null)
+        {
+            Destroy(gameObject.transform.Find("Button").transform.gameObject);
+        }
     }
 }

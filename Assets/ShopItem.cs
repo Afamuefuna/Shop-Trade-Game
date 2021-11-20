@@ -15,7 +15,8 @@ public class ShopItem
     {
         pants,
         shirt,
-        shoe
+        shoe,
+        collectible
     }
 
     public itemType mItemType;

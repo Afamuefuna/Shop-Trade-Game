@@ -5,8 +5,8 @@ using TMPro;
 
 public class characterStats : MonoBehaviour
 {
-    public float money;
-    public float itemsBought;
+    public static float money;
+    public static float itemsBought;
 
     public TMP_Text moneyText;
     public TMP_Text itemsBoughtText;
