@@ -18,6 +18,7 @@ public class ShopEventHandler : MonoBehaviour
         ShopPanel.SetActive(true);
         WardrobePanel.SetActive(true);
         closeShopPanelButton.SetActive(true);
+        ShopKeeperChatOrder.shopKeeperChat = "What are you buying today?";
     }
 
     public void sell()
@@ -26,17 +27,14 @@ public class ShopEventHandler : MonoBehaviour
         ShopPanel.SetActive(false);
         WardrobePanel.SetActive(false);
         closeShopPanelButton.SetActive(true);
+        ShopKeeperChatOrder.shopKeeperChat = "Let's see what available to buy";
     }
 
     public void wardRobe()
     {
         WardrobePanel.SetActive(true);
         closeShopPanelButton.SetActive(true);
-    }
-
-    public void chat()
-    {
-
+        ShopKeeperChatOrder.shopKeeperChat = " ";
     }
 
     public void closeShopPanels()
@@ -45,5 +43,6 @@ public class ShopEventHandler : MonoBehaviour
         ShopPanel.SetActive(false);
         closeShopPanelButton.SetActive(false);
         sellPanel.SetActive(false);
+        ShopKeeperChatOrder.shopKeeperChat = "Are you going?";
     }
 }

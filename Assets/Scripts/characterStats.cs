@@ -14,6 +14,14 @@ public class characterStats : MonoBehaviour
     private void Update()
     {
         moneyText.text = "coins " + money.ToString();
-        itemsBoughtText.text = "items bought " + itemsBought.ToString() + "/5";
+        if(itemsBought >= 5)
+        {
+            GameManager.Instance.currentActivity = GameManager.Activity.onTaskComplete;
+            itemsBoughtText.text = "Congrats. Game over";
+        }
+        else
+        {
+            itemsBoughtText.text = "items bought " + itemsBought.ToString() + "/5";
+        }
     }
 }

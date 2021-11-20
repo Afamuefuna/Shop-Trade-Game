@@ -18,6 +18,7 @@ public class Trading : MonoBehaviour
         if(itemID.price > characterStats.money)
         {
             Debug.Log("You do not have enough money kid");
+            ShopKeeperChatOrder.shopKeeperChat = "You do not have enough money kid, got something I can buy?";
         }
         else
         {
@@ -36,13 +37,15 @@ public class Trading : MonoBehaviour
             itemID.mItemState= itemID.state.inWardRobe;
             itemID.initializeForWardrobe();
             Debug.Log("ITEM added to wardrobe");
-
+            ShopKeeperChatOrder.shopKeeperChat = "Nice, that would fit you so well";
             characterStats.itemsBought = characterStats.itemsBought + 1;
         }
     }
 
     public void sell()
     {
+        ShopKeeperChatOrder.shopKeeperChat = "My wife would love this!";
+
         characterStats = GameObject.FindGameObjectWithTag("Player").GetComponent<characterStats>();
         itemID = gameObject.transform.GetComponentInParent<itemID>();
         collections = GameObject.FindGameObjectWithTag("Player").GetComponent<collections>();

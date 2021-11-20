@@ -6,9 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool onIntro = true;
-
     private static GameManager _instance;
+
+    public enum Activity
+    {
+        onIntro,
+        onTask,
+        onTaskComplete
+    }
+
+    public Activity currentActivity = Activity.onIntro;
+
     public static GameManager Instance
     {
         get

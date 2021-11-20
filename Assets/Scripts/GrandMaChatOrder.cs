@@ -19,7 +19,7 @@ public class GrandMaChatOrder : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance.onIntro)
+        if (GameManager.Instance.currentActivity == GameManager.Activity.onIntro)
         {
             introChatOrder();
         }
@@ -61,6 +61,9 @@ public class GrandMaChatOrder : MonoBehaviour
                 characterStats.money = characterStats.money + 100;
                 break;
             case 8:
+                GrandMaChat = GrandMaChatSystem.chats[0].Discussion[6];
+                break;
+            case 9:
                 TerryChat = TerryChatSystem.chats[0].Discussion[2];
                 break;
             default:
@@ -68,7 +71,7 @@ public class GrandMaChatOrder : MonoBehaviour
                 GrandMaChatBox.SetActive(false);
                 TerryChatBox.SetActive(false);
                 NextButton.SetActive(false);
-                GameManager.Instance.onIntro = false;
+                GameManager.Instance.currentActivity = GameManager.Activity.onTask;
                 break;
         }
 

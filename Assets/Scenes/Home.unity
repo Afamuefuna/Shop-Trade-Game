@@ -4231,9 +4231,10 @@ MonoBehaviour:
       expensive, we wouldn't want to wait till then do we?
     - so we have to start planning now.
     - first we need to get you clothes and shoes before the price spikes up.
-    - 'unfortunately i do not have so much with me, here, take this hundred dollars,
+    - 'unfortunately i do not have so much with me, here, take this hundred coins,
       go down to the nearby store and see what it can get you, we need to get at
-      least 5 items from the store. '
+      least FIVE ITEMS from the store. '
+    - You can inspect the desks to check if there's anything to sell.
 --- !u!58 &1215045491
 CircleCollider2D:
   m_ObjectHideFlags: 0
