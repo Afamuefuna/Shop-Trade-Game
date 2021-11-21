@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -484,6 +485,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      character_shoes1_4: -3419322082093297944
+      character_shoes1_3: 3617069324088938475
+      character_shoes1_6: -6691943450324779972
+      character_shoes1_11: -2920110720968535464
+      character_shoes1_9: -1276169593330424828
+      character_shoes1_8: 1706901073474417712
+      character_shoes1_14: -7536767463986366099
+      character_shoes1_1: -6131914364569673982
+      character_shoes1_15: -5261140464589329617
+      character_shoes1_12: 6706363962904817151
+      character_shoes1_5: -6199882480263931819
+      character_shoes1_2: 3984074036661504948
+      character_shoes1_10: 4992087090941594356
+      character_shoes1_13: -1290947210627076262
+      character_shoes1_0: 6635188262299927898
+      character_shoes1_7: -2916124946886053487
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

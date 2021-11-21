@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -484,6 +485,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      character_shirt1_15: 5126032022878509876
+      character_shirt1_0: -7326481276520192329
+      character_shirt1_1: -4788709946318787732
+      character_shirt1_9: -7648052566875594829
+      character_shirt1_5: -4986274960259574550
+      character_shirt1_14: -1633097992120443734
+      character_shirt1_6: 2431669473852994437
+      character_shirt1_10: -7761010863398954908
+      character_shirt1_13: -2792540077806991279
+      character_shirt1_3: 1313152678478488808
+      character_shirt1_11: 8496254027907824354
+      character_shirt1_7: -822899612277113181
+      character_shirt1_2: -4489863371957728312
+      character_shirt1_8: 2569567515236366861
+      character_shirt1_12: 7892520619845385701
+      character_shirt1_4: -3923247897279231580
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
